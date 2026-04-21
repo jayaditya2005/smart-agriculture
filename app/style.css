@@ -1,0 +1,173 @@
+/* Option B: Vibrant Light Mode & Glassmorphism Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Outfit:wght@400;600;800&display=swap');
+
+/* Global Reset */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Master App Background - Soft Pastel Multi-Color Gradient */
+.stApp {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7eb 40%, #fff0f5 100%) !important;
+    background-size: 400% 400% !important;
+    animation: gradientFlow 15s ease infinite !important;
+    color: #2b3035 !important; /* Deep charcoal for perfect readability */
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sidebar Styling - Frosted Glass */
+section[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif !important;
+    color: #1a1f26 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h1 {
+    font-size: 2.8rem !important;
+    background: -webkit-linear-gradient(45deg, #0e744d, #149c68);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Containers & Metric Cards */
+div[data-testid="stVerticalBlock"] > div > div {
+    /* Target major blocked layout containers */
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 8px 32px rgba(14, 116, 77, 0.04);
+}
+
+/* Remove blur from actual base internal elements to prevent stacking */
+div[data-testid="stVerticalBlock"] > div > div > div {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Input Fields & Widgets */
+div[data-baseweb="input"] > div, 
+div[data-baseweb="select"] > div, 
+input[type="number"] {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 2px solid rgba(200, 216, 226, 0.5) !important;
+    color: #2b3035 !important;
+    border-radius: 12px !important;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+div[data-baseweb="input"] > div:hover, 
+div[data-baseweb="select"] > div:hover,
+input[type="number"]:focus {
+    background-color: #ffffff !important;
+    border-color: #1cc686 !important;
+    box-shadow: 0 0 0 4px rgba(28, 198, 134, 0.15) !important;
+}
+
+/* Primary Form Buttons (Emerald Green) */
+.stButton > button[type="primary"] {
+    background: linear-gradient(135deg, #1aa36f, #0e744d) !important;
+    border: none !important;
+    color: white !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    border-radius: 14px !important;
+    padding: 12px 28px !important;
+    box-shadow: 0 6px 15px rgba(24, 150, 102, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stButton > button[type="primary"]:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    background: linear-gradient(135deg, #1cc686, #149c68) !important;
+    box-shadow: 0 10px 25px rgba(24, 150, 102, 0.45) !important;
+}
+
+/* Secondary Buttons (Soft Blue/Grey) */
+.stButton > button:not([type="primary"]) {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    color: #4b5563 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stButton > button:not([type="primary"]):hover {
+    transform: translateY(-2px) !important;
+    background: #ffffff !important;
+    color: #149c68 !important;
+    border-color: rgba(20, 156, 104, 0.2) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Metrics and Data Cards */
+[data-testid="stMetricValue"] {
+    color: #0b5a3c !important; /* Deep vibrant emerald */
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    font-family: 'Outfit', sans-serif !important;
+    letter-spacing: -0.03em !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #6b7280 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Info and Alert Boxes - Glass UI */
+div[data-testid="stAlert"] {
+    border-radius: 14px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.8) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.03) !important;
+}
+
+div[data-testid="stAlert"] > div[role="alert"] {
+    background-color: transparent !important;
+}
+
+/* File Uploader */
+section[data-testid="stFileUploadDropzone"] {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border: 2px dashed rgba(43, 91, 132, 0.2) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+section[data-testid="stFileUploadDropzone"]:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: #1cc686 !important;
+}
+
+/* Hide Streamlit Branding */
+footer {visibility: hidden;}
+#MainMenu {visibility: hidden;}
